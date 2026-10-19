@@ -4,16 +4,17 @@ This chapter transcribes the revision 2.0 schematic. Pin numbering is
 electrical numbering in that schematic. Before wiring physical connectors,
 confirm pin-1 orientation on the actual board revision.
 
-### **4.1 General Pinout** {.section-page}
+### **4.1 J4 Host Header Pinout** {.section-page}
 
-J4 is the ten-position castellated host header.
+J4 is the ten-position castellated host header.\
+![Top view showing the J4 host header signals and microphone and speaker connectors](hardware/pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png){width=6.5in}
 
 | J4 pin | Signal | Function |
 |---:|---|---|
 | 1 | VCC | Module supply, marked +5V on board image |
 | 2 | GND | Ground |
-| 3 | SDA | I2C data |
-| 4 | SCL | I2C clock |
+| 3 | SCL | I2C clock |
+| 4 | SDA | I2C data |
 | 5 | MCLK | ES8311 master-clock input |
 | 6 | SCLK | Serial audio bit clock |
 | 7 | ASDOUT | ADC serial audio output |
@@ -21,14 +22,15 @@ J4 is the ten-position castellated host header.
 | 9 | DSDIN1 | DAC serial audio input |
 | 10 | PA_CTRL | NS4150B control |
 
-The top image abbreviates ASDOUT as OUT. The schematic uses ASDOUT; it is
-digital audio data, not the speaker output.
+The illustration abbreviates ASDOUT as DOUT, DSDIN1 as DIN, and PA_CTRL as PA.
+The board silkscreen abbreviates ASDOUT as OUT. These are digital audio and
+control signals, not the speaker output.
 
 ### **4.2 Host Pinout Compatibility** {.section-page}
 
 | Host requirement | Module connection | Validated host mapping |
 |---|---|---|
-| I2C SDA / SCL | J4 pins 3 / 4 | |
+| I2C SCL / SDA | J4 pins 3 / 4 | |
 | I2S MCLK / SCLK / LRCK | J4 pins 5 / 6 / 8 | |
 | I2S ADC receive | J4 pin 7 | |
 | I2S DAC transmit | J4 pin 9 | |

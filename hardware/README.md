@@ -26,8 +26,8 @@ structure, source distinctions, and blank fields for undocumented values.
 |---:|---|---|
 | 1 | VCC | Module supply, marked +5V on board image |
 | 2 | GND | Ground |
-| 3 | SDA | I2C data |
-| 4 | SCL | I2C clock |
+| 3 | SCL | I2C clock |
+| 4 | SDA | I2C data |
 | 5 | MCLK | Master-clock input |
 | 6 | SCLK | Serial audio bit clock |
 | 7 | ASDOUT | ADC serial audio output |
@@ -46,6 +46,8 @@ power and logic requirements before connecting it.
 - [ES8311 User Guide](resources/es8311_user_guide.pdf)
 - [Top view](img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png)
 - [Bottom view](img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png)
+- [Functional block diagram](img/unit_block_diagram_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png)
+- [J4 host header pinout](pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png)
 
 Validated VCC limits, speaker load, output power, current consumption, and
 mechanical dimensions are not supplied in the available board documents.

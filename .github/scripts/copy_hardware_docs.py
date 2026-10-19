@@ -18,6 +18,8 @@ PUBLISHED_HARDWARE_FILES = (
     "assets/README.md",
     "img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png",
     "img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png",
+    "img/unit_block_diagram_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png",
+    "pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png",
     "resources/es8311_user_guide.pdf",
     "resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf",
 )
@@ -109,11 +111,19 @@ def classify_resource(name, extension):
         category = "Product documents"
         title = "Schematic"
         description = "Electrical schematic"
+    elif "j4_header_pinout" in lower_name:
+        category = "Pinouts"
+        title = "J4 Host Header Pinout"
+        description = "Host header signals and audio connector locations"
     elif "pinout" in lower_name:
         category = "Pinouts"
         language = "Spanish" if "_es." in lower_name else "English"
         title = f"Pinout — {language}"
         description = f"Connector and signal reference in {language}"
+    elif "block_diagram" in lower_name:
+        category = "Board views"
+        title = "Functional Block Diagram"
+        description = "ES8311 audio paths and speaker amplifier"
     elif "dimension" in lower_name:
         category = "Board views"
         title = "Mechanical Dimensions"

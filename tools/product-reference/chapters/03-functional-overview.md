@@ -6,9 +6,7 @@ feeds both a jack path and the NS4150B speaker amplifier in the schematic.
 
 ### **3.1 Block Diagram** {.section-page}
 
-Host I2C → ES8311 control; host I2S/PCM ↔ ES8311 audio; microphone → ES8311
-ADC; ES8311 DAC → 3.5 mm jack and NS4150B → speaker connector. VCC feeds the
-amplifier and two 3.3 V regulators.
+![Functional block diagram of the ES8311 codec, microphone input, jack path, and NS4150B speaker amplifier](hardware/img/unit_block_diagram_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png){width=6.5in}
 
 ### **3.2 Board Topology** {.section-page}
 

@@ -9,6 +9,8 @@ lowercase letters, digits, and underscores. The pattern is
 | --- | --- |
 | Top view | [PNG](../img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png) |
 | Bottom view | [PNG](../img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png) |
+| Functional block diagram | [PNG](../img/unit_block_diagram_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png) |
+| J4 host header pinout | [PNG](../pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png) |
 | Schematic | [PDF](../resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf) |
 | ES8311 user guide | [PDF](../resources/es8311_user_guide.pdf) |
 
@@ -18,5 +20,5 @@ file was named `unit_sch_ue0097_v1_0_0_es8311.pdf`, but its title block states
 document. The ES8311 user guide is a third-party document, so its original
 content and version are unchanged.
 
-Add future pinout files under `hardware/pinout/` and 3D models under
-`hardware/mechanics/` only when the corresponding source assets are available.
+Add a full-board pinout under `hardware/pinout/` and 3D models under
+`hardware/mechanics/` when the corresponding source assets are available.

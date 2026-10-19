@@ -1,7 +1,7 @@
 ## **2 Ratings**
 
 The tables distinguish ES8311 component conditions from values validated for
-the complete UE0097 module. An empty cell means the supplied documentation
+the complete module. An empty cell means the supplied documentation
 does not specify that value. It is not a zero value or permission to apply any
 value.
 
@@ -12,10 +12,10 @@ value.
 | ES8311 AVDD | 1.7 V | 3.3 V | 3.6 V | ES8311 User Guide, section 2 |
 | ES8311 PVDD | 1.6 V | 3.3 V | 3.6 V | ES8311 User Guide, section 2 |
 | ES8311 DVDD | 1.6 V | 3.3 V | 3.6 V | ES8311 User Guide, section 2 |
-| UE0097 VCC input | | | | Board-level limit not supplied |
-| UE0097 3V3 output current | | | | Board-level limit not supplied |
-| UE0097 speaker load | | | | Board-level limit not supplied |
-| UE0097 operating temperature | | | | Board-level limit not supplied |
+| Module VCC input | | | | Board-level limit not supplied |
+| Module 3V3 output current | | | | Board-level limit not supplied |
+| Module speaker load | | | | Board-level limit not supplied |
+| Module operating temperature | | | | Board-level limit not supplied |
 
 The board image labels the header supply as +5V. This identifies the intended
 nominal input marking, but the supplied documents give no validated module

@@ -1,8 +1,8 @@
 ## **5 Board Operation**
 
-UE0097 is a peripheral; setup is performed on an external host. The
+The module is a peripheral; setup is performed on an external host. The
 ES8311 User Guide provides component-level register and clock information.
-The repository currently contains no verified UE0097 firmware example.
+The repository currently contains no verified module-specific firmware example.
 
 ### **5.1 Getting Started with a Host Controller** {.section-page}
 

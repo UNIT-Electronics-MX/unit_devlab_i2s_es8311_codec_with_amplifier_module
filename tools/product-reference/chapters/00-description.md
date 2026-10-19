@@ -7,7 +7,7 @@ microphone connector, a 3.5 mm audio jack, a two-pin speaker connector, an I2S
 header, and an I2C/QWIIC-style connector. An external host supplies clocks,
 audio data, control, and power.
 
-![Top view of the UE0097 module](hardware/img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png){width=4.5in}
+![Top view of the audio module](hardware/img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png){width=4.5in}
 
 ### **Applications**
 

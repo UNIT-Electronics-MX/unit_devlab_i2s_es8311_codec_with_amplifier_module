@@ -3,7 +3,7 @@
 ### **9.1 Schematic**
 
 The source drawing is
-[UE0097 revision 2.0 schematic](https://github.com/UNIT-Electronics-MX/unit_devlab_i2s_es8311_codec_with_amplifier_module/blob/main/hardware/resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf).
+[Revision 2.0 schematic](https://github.com/UNIT-Electronics-MX/unit_devlab_i2s_es8311_codec_with_amplifier_module/blob/main/hardware/resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf).
 Its title block states sheet 1 of 2, while the supplied PDF contains one
 page. A second page has not been supplied.
 
@@ -28,7 +28,7 @@ J1/J2/J3/J4/J6, microphone bias, and ground coupling.
 
 ### **9.2 Technical References**
 
-1. The UE0097 schematic revision 2.0 defines the board circuit and connector
+1. The board schematic revision 2.0 defines the circuit and connector
    signal names.
 2. The ES8311 User Guide Rev 1.11 defines codec component characteristics
    and register-level interface behavior.
@@ -79,4 +79,4 @@ J1/J2/J3/J4/J6, microphone bias, and ground coupling.
 |---|---|---|
 | | | |
 
-No verified UE0097 hardware erratum is included in the supplied sources.
+No verified hardware erratum is included in the supplied sources.

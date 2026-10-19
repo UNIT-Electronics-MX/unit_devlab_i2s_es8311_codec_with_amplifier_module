@@ -1,8 +1,9 @@
 ## **3 Functional Overview**
 
-The external host supplies power, I2C control, and I2S/PCM clocks and data.
-The ES8311 handles mono recording and playback. Its differential analog output
-feeds both a jack path and the NS4150B speaker amplifier in the schematic.
+The external host supplies power and I2C control and exchanges serial audio
+with the ES8311. The direction of the serial audio clocks depends on the codec
+mode. The ES8311 handles mono recording and playback. Its differential analog
+output feeds both a jack path and the NS4150B speaker amplifier in the schematic.
 
 ### **3.1 Block Diagram** {.section-page}
 
@@ -25,11 +26,21 @@ register-level programming and valid clock configurations.
 
 ### **3.4 Digital Audio Architecture** {.section-page}
 
-The codec has a serial audio port supporting I2S, left-justified, and DSP-A/B
-formats. MCLK is the external master-clock input on the board. SCLK and LRCK
-can be inputs in slave mode or outputs in master mode as configured in ES8311
-registers. ASDOUT carries ADC data toward the host; DSDIN1 carries playback
-data from the host.
+The serial audio port supports I2S, left-justified, and DSP-A/B formats. In
+each format, the codec sends the most significant data bit first. DSDIN1
+receives playback samples for the DAC; ASDOUT sends captured ADC samples to
+the host. These data directions do not change with the clock mode. SCLK times
+the data bits, while LRCK identifies the audio frame alignment. The host and
+codec must use the same data format and word length.
+
+| Codec mode | SCLK and LRCK at J4 | Clock source at these pins |
+|---|---|---|
+| Slave (reset default) | Inputs | Host |
+| Master | Outputs | ES8311 |
+
+MCLK is an input in either mode. The codec can select MCLK or SCLK as its
+internal master-clock source through register settings. The ES8311 User Guide,
+sections 7 and 8, defines the format timing and clock-divider options.
 
 ### **3.5 Speaker Amplifier** {.section-page}
 
@@ -64,9 +75,16 @@ A_3V3 from VCC.
 
 ### **3.10 I2C Control** {.section-page}
 
-IC1 CCLK and CDATA connect to SCL and SDA respectively. R5 pulls CE to
-3V3, so the ES8311 User Guide assigns the 7-bit address 0x19 for the shown
-assembly. The guide gives a control-bus transfer rate below 400 kbit/s.
+I2C reads and writes codec registers; audio samples travel on the separate
+serial audio port. J4 pin 3 (SCL) and J6 pin 4 share the clock net, which
+reaches IC1 CCLK through zero-ohm R7. J4 pin 4 (SDA) and J6 pin 3 share the
+bidirectional data net, which reaches IC1 CDATA through zero-ohm R4.
+
+R5 pulls CE to 3V3, selecting the 7-bit address 0x19 in the ES8311 User Guide.
+The guide specifies an I2C transfer rate below 400 kbit/s and recommends
+1–4.7 kΩ pull-ups for CCLK and CDATA. The available schematic page does not
+show dedicated SCL/SDA pull-ups. Verify the pull-ups and their voltage on the
+assembled bus before connecting the host or another I2C device.
 
 ### **3.11 Headphone / Jack Path** {.section-page}
 
@@ -76,10 +94,10 @@ also present at the jack circuit.
 
 ### **3.12 I2C and QWIIC Expansion** {.section-page}
 
-J6 exposes VCC, ground, SDA, and SCL. It shares the codec I2C signals with
-J4. Its VCC pin is the module input net, not the 3V3 regulator output in the
-revision 2.0 schematic. The host and attached I2C device must share a
-compatible power and logic arrangement.
+J6 extends the same I2C bus as J4; it is not a separate controller or an
+I2S connection. Devices attached to J6 share the bus pull-ups and address
+space. J6 also carries the module VCC input net, not the regulated 3V3 net.
+Check the attached device's supply and logic compatibility before connecting it.
 
 ### **3.13 Combined System Operation** {.section-page}
 

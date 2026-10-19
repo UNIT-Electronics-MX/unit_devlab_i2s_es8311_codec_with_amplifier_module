@@ -9,18 +9,22 @@ confirm pin-1 orientation on the actual board revision.
 J4 is the ten-position castellated host header.\
 ![Top view showing the J4 host header signals and microphone and speaker connectors](hardware/pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png){width=6.5in}
 
-| J4 pin | Signal | Function |
-|---:|---|---|
-| 1 | VCC | Module supply, marked +5V on board image |
-| 2 | GND | Ground |
-| 3 | SCL | I2C clock |
-| 4 | SDA | I2C data |
-| 5 | MCLK | ES8311 master-clock input |
-| 6 | SCLK | Serial audio bit clock |
-| 7 | ASDOUT | ADC serial audio output |
-| 8 | LRCK | Serial audio frame clock |
-| 9 | DSDIN1 | DAC serial audio input |
-| 10 | PA_CTRL | NS4150B control |
+Directions are relative to the module.
+
+| J4 pin | Signal | Direction | Function |
+|---:|---|---|---|
+| 1 | VCC | Input | Module supply (+5V marking) |
+| 2 | GND | Return | Ground reference |
+| 3 | SCL | Input | I2C clock from host |
+| 4 | SDA | Bidirectional | I2C register data |
+| 5 | MCLK | Input | Codec master clock |
+| 6 | SCLK | Input / output | Serial audio bit clock |
+| 7 | ASDOUT | Output | ADC samples to host |
+| 8 | LRCK | Input / output | Audio frame clock |
+| 9 | DSDIN1 | Input | DAC samples from host |
+| 10 | PA_CTRL | Input | NS4150B amplifier control |
+
+SCLK and LRCK are inputs in slave mode and outputs in master mode.
 
 The illustration abbreviates ASDOUT as DOUT, DSDIN1 as DIN, and PA_CTRL as PA.
 The board silkscreen abbreviates ASDOUT as OUT. These are digital audio and

@@ -1,11 +1,5 @@
 ## **1 The Board**
 
-The board is an audio peripheral module. It has no onboard microcontroller or
-firmware storage. The available schematic title block identifies the design as
-UE0097 - ES8311 V2, revision 2.0. The available top and bottom images have
-V1.1.0 in their file names; their electrical correspondence to revision 2.0
-has not been independently verified.
-
 ### **1.1 Accessories** {.section-page}
 
 | Accessory | Purpose | Verified specification |

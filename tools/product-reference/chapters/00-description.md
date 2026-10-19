@@ -1,11 +1,11 @@
 ## **Description**
 
-The UNIT I2S ES8311 Codec with Amplifier Module (UE0097) is a mono audio
-interface for a host controller. The ES8311 converts between analog audio and
-digital I2S/PCM audio. The board adds an NS4150B speaker amplifier, an analog
-microphone connector, a 3.5 mm audio jack, a two-pin speaker connector, an I2S
-header, and an I2C/QWIIC-style connector. An external host supplies clocks,
-audio data, control, and power.
+The UNIT I2S ES8311 Codec with Amplifier Module (UE0097) provides mono audio
+capture and playback for an external host. A microphone connects at J2; audio
+can be played through the 3.5 mm jack or a speaker at J1. The host supplies
+power, configures the audio path over I2C, and exchanges samples and clocks
+over I2S/PCM. Inside the product, the ES8311 handles conversion and the
+NS4150B drives the speaker output.
 
 ![Top view of the audio module](hardware/img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png){width=4.5in}
 
@@ -28,9 +28,8 @@ application-level validation.
 
 ### **Hardware Features**
 
-- ES8311 mono codec with differential microphone input and I2S/PCM port
-- NS4150B amplifier connected to the ES8311 differential output
-- Separate speaker, microphone, 3.5 mm jack, 10-position header, and
-  four-position QWIIC-style connectors
-- Two AP2112K-3.3 regulators, power indicator, and amplifier control signal
-- Four mounting holes and castellated 2.54 mm header positions
+- Mono microphone capture and playback over a host-controlled I2S/PCM link
+- Differential speaker output with a separate host amplifier-control signal
+- Microphone, speaker, and 3.5 mm audio connections
+- J4 host header for power, I2C, I2S, and amplifier control; J6 extends I2C
+- Separate regulated digital and analog supply nets and a power indicator

@@ -1,13 +1,13 @@
 ## **4 Connectors & Pinouts**
 
-This chapter transcribes the revision 2.0 schematic. Pin numbering is
-electrical numbering in that schematic. Before wiring physical connectors,
-confirm pin-1 orientation on the actual board revision.
+The module brings power, I2C control, digital audio, and amplifier control to its
+host header. Connector pin numbers below follow the revision 2.0 electrical
+design. Confirm pin-1 orientation on the actual product before wiring it.
 
 ### **4.1 General Pinout** {.section-page}
 
-A complete general board pinout has not been supplied. The available diagram
-and table identify only the J4 host header.
+A complete general pinout drawing is pending. The diagram and
+table below cover the J4 host header.
 
 **J4 host header pinout**
 
@@ -37,9 +37,9 @@ same serial bit clock, while WS and LRCK name the same audio frame clock.
 The Function PCB names below come from a different board version and serve
 only as a functional cross-reference. They are not a transcription of this
 board's silkscreen. DIN and DOUT in this table are relative to the codec.
-Use the revision 2.0 schematic signal and J4 pin to identify each connection:
+Use the module signal and J4 pin to identify each connection:
 
-| Software function | Function PCB (reference version) | Schematic signal / J4 pin |
+| Software function | Function PCB (reference version) | Module signal / J4 pin |
 |---|---|---|
 | PA_CTRL | PA | PA_CTRL / 10 |
 | I2C_SDA | SDA | SDA / 4 |
@@ -76,23 +76,21 @@ voltage compatibility, and required firmware depend on the chosen controller.
 
 ### **4.3 QWIIC Connector** {.section-page}
 
-| J6 pin | Schematic net |
+| J6 pin | Module signal |
 |---:|---|
 | 1 | VCC |
 | 2 | AGND |
 | 3 | SDA |
 | 4 | SCL |
 
-The board calls J6 QWIIC, while the schematic connects its supply contact
-to VCC. Connector pitch, mating part, and safe voltage for attached devices
-are not established by the supplied documentation.
+J6 is labelled QWIIC, but its supply contact carries VCC. Confirm the cable
+and the attached device's supply and logic voltage before connection.
 
 ### **4.4 Microphone Connector** {.section-page}
 
-J2 is a two-position connector for the external analog microphone circuit.
-The schematic shows pin 1 on the MIC1P path and pin 2 on the MIC1N path.
-Connector polarity and microphone electrical requirements must be checked
-against the actual assembly.
+J2 is the two-position analog microphone connection. Pin 1 routes to MIC1P
+and pin 2 to MIC1N. Check the actual assembly's connector orientation and
+the selected microphone's electrical requirements before connection.
 
 ### **4.5 Speaker Connections**
 
@@ -102,21 +100,20 @@ is a ground return.
 
 ### **4.6 3.5 mm Audio Jack** {.section-page}
 
-J3 is a PJ-320D jack connected to the codec output path, MIC1P circuit, and
-analog ground. The supplied schematic does not define a tested headset wiring
-standard or a user-facing plug-contact pinout.
+J3 is a PJ-320D jack connected to the audio output path, MIC1P circuit, and
+analog ground. A tested headset wiring standard and plug-contact pinout for
+the product have not been established.
 
 ### **4.7 Power and Amplifier Control**
 
-VCC enters through J4 and is also present at J6. There is no USB, BOOT, or
-reset circuit on this module. J4 pin 10 carries PA_CTRL; the schematic connects
-it to IC2 CTRL through R12. The required logic thresholds and safe power-up
-sequence are not specified at module level.
+VCC enters through J4 and is also present at J6. The module has no USB, BOOT, or
+reset circuit. J4 pin 10 carries PA_CTRL to the amplifier's CTRL input through
+R12. Amplifier-control logic thresholds and a power-up sequence have not been
+established.
 
 ### **4.8 Test Pads and Assembly Options** {.section-page}
 
-The images show solder options labelled amplifier off and I2C address. The
-revision 2.0 schematic shows a PA_CTRL-to-ground option and an ES8311 CE
-pull-up. The default assembled configuration and rework instructions for
-those options are not documented. Confirm the populated board before changing
-either option.
+Solder options are labelled amplifier off and I2C address. The circuit
+includes a PA_CTRL-to-ground option and an ES8311 CE pull-up. Confirm the
+populated configuration before changing either option; default assembly and
+rework instructions have not been established.

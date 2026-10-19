@@ -11,9 +11,9 @@
 | 3.5 mm plug or headset | Connects to J3 |
 | Four-position cable | Connects to J6 |
 
-Connector mating part numbers, speaker impedance and power rating, microphone
-requirements, and cable orientation are not defined in the supplied board
-documentation.
+Select the microphone, speaker, power source, and mating cables for the
+intended application. Confirm connector orientation and electrical limits
+before assembly.
 
 ### **1.2 Board Identification**
 
@@ -23,15 +23,12 @@ documentation.
 | SKU / MPN | UE0097 |
 | Product family | UNIT DevLab ecosystem |
 | Product type | Mono audio codec and amplifier module |
-| Main component | ES8311 |
+| Audio codec | ES8311 |
 | Amplifier | NS4150B |
-| Schematic revision | 2.0 |
-| Image file revision | V1.1.0 |
-| Product Reference | Version 0.1.0 |
 
 ### **1.3 Main Assemblies**
 
-| RefDes | Component | Schematic function |
+| RefDes | Part | Role in the product |
 |---|---|---|
 | IC1 | ES8311 | Mono audio ADC, DAC, and digital audio interface |
 | IC2 | NS4150B | Differential speaker amplifier |
@@ -49,8 +46,8 @@ documentation.
 
 ![Bottom view of the module](hardware/img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png){width=4.8in}
 
-The images show connector placement and silkscreen. For electrical connections
-in this reference, use the revision 2.0 schematic.
+The views show connector placement and labels. Chapter 4 identifies the
+electrical connections used by this product reference.
 
 ### **1.5 Handling** {.section-page}
 

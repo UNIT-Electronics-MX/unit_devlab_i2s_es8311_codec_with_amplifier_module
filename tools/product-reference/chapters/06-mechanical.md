@@ -1,9 +1,9 @@
 ## **6 Mechanical Information**
 
-The available top and bottom board images show a compact module with four
-mounting holes, a 10-position castellated header, a 3.5 mm jack, and audio
-connectors. They are tagged V1.1.0 and are illustrative for the revision 2.0
-electrical reference.
+The module has four mounting holes, a ten-position castellated host header, a
+3.5 mm jack, and dedicated audio connectors. The views below show connector
+placement; verify dimensions against the physical product before designing
+an enclosure or carrier.
 
 ### **6.1 Component-side Envelope** {.section-page}
 
@@ -16,8 +16,8 @@ QWIIC-style and I2S connectors, and host wiring.
 
 ![Bottom side](hardware/img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png){width=4.8in}
 
-Maintain clearance around solder pads and mounting holes. The available image
-does not establish a controlled hole pattern or board thickness.
+Maintain clearance around solder pads and mounting holes. A controlled hole
+pattern and board thickness have not been provided.
 
 ### **6.3 Mechanical Data Not Specified** {.section-page}
 
@@ -32,5 +32,4 @@ does not establish a controlled hole pattern or board thickness.
 | Maximum component height, bottom | |
 | Connector keep-outs | |
 
-Use a controlled mechanical drawing or physical measurement before designing
-an enclosure or carrier. No such drawing is supplied in the available package.
+Use a controlled mechanical drawing or physical measurement for final fit.

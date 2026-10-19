@@ -1,8 +1,8 @@
 ## **5 Board Operation**
 
-The module is a peripheral; setup is performed on an external host. The
-ES8311 User Guide provides component-level register and clock information.
-The repository currently contains no verified module-specific firmware example.
+The module operates as an audio peripheral controlled by an external host. The
+host configures its audio paths over I2C, provides or receives the selected
+audio clocks, and exchanges samples over I2S/PCM.
 
 ### **5.1 Getting Started with a Host Controller** {.section-page}
 
@@ -15,22 +15,22 @@ host pin numbers and codec driver depend on the host platform.
 
 ### **5.2 First Power-up and Inspection**
 
-Inspect connector orientation and the actual revision. Apply the supply
-intended for that assembly using a current-limited source. The power LED
-should indicate VCC presence. Verify 3V3 and A_3V3 before connecting a
-speaker or microphone. The supplied documents contain no module current
-limit or production acceptance test.
+Inspect connector orientation and the actual product revision. Apply the
+intended supply using a current-limited source. The power LED should indicate
+VCC presence. Verify 3V3 and A_3V3 before connecting a speaker or microphone.
+Current limits and production acceptance criteria are still to be validated.
 
 ### **5.3 Control and Clock Workflow**
 
 Use I2C to detect the codec at the 7-bit address 0x19 selected by the
-revision 2.0 schematic's CE pull-up. Configure the serial audio format,
+CE pull-up. Configure the serial audio format,
 word length, clock source, and clock dividers using the ES8311 User Guide.
 After reset the codec defaults to slave mode, so the host drives SCLK and LRCK.
 If master mode is selected, the codec drives those lines; the host must not
 drive them at the same time. MCLK remains an input when selected as the clock
 source. Enable the record and playback paths required by the application.
-A board-tested register sequence has not been supplied.
+An application-specific register sequence must be validated on the assembled
+product.
 
 ### **5.4 Recommended Bring-up Sequence** {.section-page}
 
@@ -48,8 +48,8 @@ Measured pass/fail ranges for these checks are not published.
 
 ### **5.5 Firmware Example Collection** {.section-page}
 
-No module-specific Arduino C++, MicroPython, or other host example has been
-validated in this repository.
+No Arduino C++, MicroPython, or other host example has been validated for
+the product.
 
 ### **5.6 Audio Buffer Planning** {.section-page}
 
@@ -62,15 +62,15 @@ host system and are not specified here.
 
 J2 supplies the ES8311 analog microphone path. Configure input selection,
 gain, filtering, and ADC output format using the User Guide. Confirm the
-microphone's electrical needs separately. There is no board-validated
-microphone model or sensitivity figure in the supplied sources.
+microphone's electrical needs separately. There is no validated microphone
+model or published sensitivity figure.
 
 ### **5.8 Playback and Recording Coexistence** {.section-page}
 
-The ES8311 supports simultaneous ADC and DAC paths at component level.
-The module routes playback toward the jack and amplifier. A host application
-must coordinate clocks, serial audio slots, buffer flow, and PA_CTRL. No
-combined-system performance or tested configuration is documented.
+The module exposes separate capture and playback data paths. Recording data
+returns to the host while playback reaches the jack and speaker amplifier.
+For simultaneous use, the host must coordinate clocks, serial audio slots,
+buffers, and PA_CTRL. Combined-operation performance has not been validated.
 
 ### **5.9 Troubleshooting Guide** {.section-page}
 

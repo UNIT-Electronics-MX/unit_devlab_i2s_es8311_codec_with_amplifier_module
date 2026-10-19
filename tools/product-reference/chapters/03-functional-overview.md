@@ -1,9 +1,9 @@
 ## **3 Functional Overview**
 
-The external host supplies power and I2C control and exchanges serial audio
-with the ES8311. The direction of the serial audio clocks depends on the codec
-mode. The ES8311 handles mono recording and playback. Its differential analog
-output feeds both a jack path and the NS4150B speaker amplifier in the schematic.
+The module combines a microphone recording path, a 3.5 mm playback path, and a
+speaker output in one host-controlled audio module. The host supplies power,
+configures the module over I2C, and exchanges digital audio over I2S/PCM.
+Clock direction depends on the selected audio mode.
 
 ### **3.1 Block Diagram** {.section-page}
 
@@ -11,18 +11,19 @@ output feeds both a jack path and the NS4150B speaker amplifier in the schematic
 
 ### **3.2 Board Topology** {.section-page}
 
-The top image shows the QWIIC-style and I2S connectors along one edge, the
-speaker connector, microphone connector, 3.5 mm jack, and a ten-position
-castellated header. The opposite image shows the amplifier-off and I2C-address
-markings.
+QWIIC-style and I2S connectors line one edge. The speaker and microphone
+connectors, 3.5 mm jack, and ten-position castellated host header provide the
+external audio and control connections. Amplifier-off and I2C-address options
+are marked on the opposite side.
 
 ### **3.3 Audio Codec** {.section-page}
 
-IC1 is the ES8311. Its recording path includes a differential analog input,
-microphone preamplifier, ADC, programmable gain, and automatic level control.
-The playback path includes a mono DAC and differential analog outputs.
-Configuration uses the I2C control interface. See the ES8311 User Guide for
-register-level programming and valid clock configurations.
+The ES8311 handles both directions of mono audio. Microphone input
+passes through its preamplifier, programmable gain, automatic level control,
+and ADC before reaching the host. Playback samples pass through its DAC to
+differential analog outputs for the jack and speaker paths. The host configures
+these paths over I2C; register and clock settings are listed in the ES8311
+User Guide.
 
 ### **3.4 Digital Audio Architecture** {.section-page}
 
@@ -44,14 +45,14 @@ sections 7 and 8, defines the format timing and clock-divider options.
 
 ### **3.5 Speaker Amplifier** {.section-page}
 
-IC2 is NS4150B. ES8311 OUTP and OUTN are AC-coupled into its differential
-input. Amplifier outputs PA_OUT+ and PA_OUT− reach J1 through zero-ohm links.
-PA_CTRL is exposed to the host and connects to the amplifier CTRL input.
+The speaker path couples ES8311 OUTP and OUTN into the NS4150B differential
+input. Its PA_OUT+ and PA_OUT− outputs reach J1 through zero-ohm links. The
+host uses PA_CTRL to control the amplifier separately from codec playback.
 
 ### **3.6 Analog Microphone Input** {.section-page}
 
-J2 exposes the microphone input circuit for ES8311 MIC1P and MIC1N. The
-schematic includes resistors and capacitors around the input and bias network.
+J2 provides the external analog microphone connection. The module routes the
+signal through an input and bias network to ES8311 MIC1P and MIC1N.
 
 ### **3.7 Status Indicator** {.section-page}
 
@@ -59,18 +60,18 @@ D1 is a green power indicator connected from VCC through R9 to ground. It
 indicates presence of the module supply; it does not report codec or amplifier
 configuration.
 
-### **3.8 AP2112K Power Management System** {.section-page}
+### **3.8 Power Management** {.section-page}
 
-U1 and U2 are AP2112K-3.3V regulators. U1 creates 3V3 and U2 creates
-A_3V3 from VCC.
+Two AP2112K-3.3V regulators create separate 3V3 and A_3V3 supply nets from
+VCC. These power the digital and analog audio circuitry, respectively.
 
 ### **3.9 Power Tree** {.section-page}
 
-| Source | Destination | Schematic connection |
+| Supply path | Connected circuits and ports | Function |
 |---|---|---|
-| VCC | IC2, D1, J4, J6, U1, U2 | Direct module supply net |
-| U1 / 3V3 | IC1 digital supply and I2C pull-up | Regulated net |
-| U2 / A_3V3 | IC1 AVDD | Analog regulated net |
+| VCC | IC2, D1, J4, J6, U1, U2 | Module supply distribution |
+| U1 / 3V3 | IC1 digital supply and I2C pull-up | Regulated digital supply |
+| U2 / A_3V3 | IC1 AVDD | Regulated analog supply |
 | AGND and GND | R8 | Zero-ohm ground coupling |
 
 ### **3.10 I2C Control** {.section-page}
@@ -80,17 +81,17 @@ serial audio port. J4 pin 3 (SCL) and J6 pin 4 share the clock net, which
 reaches IC1 CCLK through zero-ohm R7. J4 pin 4 (SDA) and J6 pin 3 share the
 bidirectional data net, which reaches IC1 CDATA through zero-ohm R4.
 
-R5 pulls CE to 3V3, selecting the 7-bit address 0x19 in the ES8311 User Guide.
-The guide specifies an I2C transfer rate below 400 kbit/s and recommends
-1–4.7 kΩ pull-ups for CCLK and CDATA. The available schematic page does not
-show dedicated SCL/SDA pull-ups. Verify the pull-ups and their voltage on the
-assembled bus before connecting the host or another I2C device.
+R5 pulls CE to 3V3, selecting the 7-bit address 0x19. The ES8311 User Guide
+specifies an I2C transfer rate below 400 kbit/s and recommends 1–4.7 kΩ
+pull-ups for CCLK and CDATA. Dedicated SCL/SDA pull-ups are not shown in the
+released circuit drawing; verify the assembled bus pull-ups and their
+voltage before connecting another I2C device.
 
 ### **3.11 Headphone / Jack Path** {.section-page}
 
-The ES8311 differential outputs also reach J3, a PJ-320D 3.5 mm jack,
-through the schematic's coupling and link components. MIC1P and ground are
-also present at the jack circuit.
+The module also routes the ES8311 differential outputs through coupling and link
+parts to J3, a PJ-320D 3.5 mm jack. MIC1P and ground are present at the jack
+circuit as well.
 
 ### **3.12 I2C and QWIIC Expansion** {.section-page}
 

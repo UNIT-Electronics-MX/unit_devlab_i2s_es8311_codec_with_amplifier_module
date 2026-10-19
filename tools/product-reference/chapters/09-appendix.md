@@ -35,9 +35,9 @@ J1/J2/J3/J4/J6, microphone bias, and ground coupling.
 3. The V1.1.0 top and bottom images identify visible parts and labels but do
    not validate the revision 2.0 electrical implementation.
 
-### **9.3 Values Not Specified by the Technical Documentation** {.section-page}
+### **9.3 Product Ratings Pending Validation** {.section-page}
 
-| Missing board-level item | Value |
+| Product characteristic | Value |
 |---|---|
 | Validated VCC input range | |
 | Module current and power budget | |
@@ -79,4 +79,4 @@ J1/J2/J3/J4/J6, microphone bias, and ground coupling.
 |---|---|---|
 | | | |
 
-No verified hardware erratum is included in the supplied sources.
+No hardware erratum has been confirmed for this product.

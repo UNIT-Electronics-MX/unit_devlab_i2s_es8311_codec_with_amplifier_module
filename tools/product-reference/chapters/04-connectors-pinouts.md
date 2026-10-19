@@ -26,9 +26,34 @@ Directions are relative to the module.
 
 SCLK and LRCK are inputs in slave mode and outputs in master mode.
 
-The illustration abbreviates ASDOUT as DOUT, DSDIN1 as DIN, and PA_CTRL as PA.
-The board silkscreen abbreviates ASDOUT as OUT. These are digital audio and
-control signals, not the speaker output.
+Software names include the I2C or I2S prefix to identify the interface;
+hardware references often use shorter signal names. BCLK and SCLK name the
+same serial bit clock, while WS and LRCK name the same audio frame clock.
+The Function PCB names below come from a different board version and serve
+only as a functional cross-reference. They are not a transcription of this
+board's silkscreen. DIN and DOUT in this table are relative to the codec.
+Use the revision 2.0 schematic signal and J4 pin to identify each connection:
+
+| Software function | Function PCB (reference version) | Schematic signal / J4 pin |
+|---|---|---|
+| PA_CTRL | PA | PA_CTRL / 10 |
+| I2C_SDA | SDA | SDA / 4 |
+| I2C_SCL | SCL | SCL / 3 |
+| I2S_BCLK | SCLK | SCLK / 6 |
+| I2S_DIN | SDIN | DSDIN1 / 9 |
+| I2S_WS (LRCK) | LRCK | LRCK / 8 |
+| I2S_MCLK | MCLK | MCLK / 5 |
+| I2S_DOUT | SDOUT | ASDOUT / 7 |
+
+Host software may name DIN and DOUT from the host's perspective. For playback,
+connect host transmit (DOUT/TX) to module DSDIN1 on J4 pin 9. For recording,
+connect module ASDOUT on J4 pin 7 to host receive (DIN/RX). Match the signal
+direction and pin number rather than two identical-looking names.
+
+The available V1.1.0 board image marks J4 pins 7 and 9 as OUT and DSDIN,
+respectively. The header illustration uses DOUT and DIN for those signals.
+OUT is digital ADC data, not the speaker output. Confirm the connector
+orientation on the actual board before wiring it.
 
 ### **4.2 Host Pinout Compatibility** {.section-page}
 

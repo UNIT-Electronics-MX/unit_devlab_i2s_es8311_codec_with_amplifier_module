@@ -17,7 +17,7 @@ on:
   workflow_dispatch: # Allow manual runs
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: github-pages
@@ -27,7 +27,7 @@ jobs:
   build-and-publish-docs:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pages: read
 
     steps:
@@ -62,19 +62,6 @@ jobs:
       run: |
         chmod +x .github/scripts/build_docs.sh
         .github/scripts/build_docs.sh
-
-    - name: Commit and push changes
-      if: github.event_name != 'pull_request' && github.run_attempt == 1
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add docs/
-        if ! git diff --cached --quiet; then
-          git commit -m "Auto-update hardware documentation"
-          git push
-        else
-          echo "No changes to commit"
-        fi
 
     - name: Configure GitHub Pages
       if: github.event_name != 'pull_request'

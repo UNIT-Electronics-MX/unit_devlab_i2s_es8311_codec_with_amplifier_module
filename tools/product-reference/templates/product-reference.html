@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="$lang$">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Pandoc">
+  <title>$title$ — $subtitle$</title>
+  $for(css)$
+  <link rel="stylesheet" href="$css$">
+  $endfor$
+</head>
+<body>
+  <section class="cover">
+    <div class="cover__brand">
+      <img src="tools/product-reference/assets/unit-logo.png" alt="UNIT Electronics">
+      <span>PRODUCT REFERENCE MANUAL</span>
+    </div>
+
+    <div class="cover__identity">
+      <p class="cover__eyebrow">MEMBER OF THE UNIT DEVLAB ECOSYSTEM</p>
+      <h1>$title$</h1>
+      <p class="cover__part">MPN: $mpn$</p>
+      <p class="cover__version">Version $version$</p>
+    </div>
+
+    <div class="cover__visual">
+      <div class="cover__halo"></div>
+      <img
+        src="hardware/img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png"
+        alt="UNIT ES8311 audio module top view">
+    </div>
+
+    <div class="cover__summary">
+      <p>
+        Mono audio codec module with ES8311, NS4150B speaker amplifier,
+        analog microphone input, 3.5 mm jack, and I2S and I2C interfaces.
+      </p>
+      <div class="cover__tags">
+        <span>ES8311</span>
+        <span>MONO AUDIO</span>
+        <span>NS4150B</span>
+        <span>I2S · I2C · QWIIC</span>
+      </div>
+    </div>
+
+    <div class="cover__footer">
+      <span>UNIT Electronics® DevLab Ecosystem</span>
+      <span>Document date $date$</span>
+    </div>
+  </section>
+
+  $if(toc)$
+  <section class="contents-page">
+    <p class="section-kicker">DOCUMENT MAP</p>
+    <h1>Contents</h1>
+    <div class="contents-page__rule"></div>
+    $toc$
+  </section>
+  $endif$
+
+  <article class="product-reference-content">
+    $body$
+  </article>
+</body>
+</html>

@@ -1,76 +1,44 @@
+# UNIT I2S ES8311 Codec with Amplifier Module
 
-# DevLab: [Protocol/Interface] [Chip/Model] [Brief Description][Module/Sensor/Shield/Adapter]
-<!-- Exception:
+The UE0097 module provides mono audio recording and playback for an external
+controller. It combines an ES8311 audio codec, an NS4150B speaker amplifier,
+an analog microphone input, a 3.5 mm audio jack, a two-pin speaker output,
+I2S/PCM audio signals, and I2C control.
 
-The PULSAR development board line does not use the DevLab: prefix.
-
-Format: PULSAR [MCU/Model]
-
-Examples: PULSAR C6, PULSAR H2, PULSAR RP2350
-
-The JUN R3 board also does not use DevLab:
-
-Example: JUN R3 -->
-
-## Introduction
-
-This is a modular development board based on a popular microcontroller, designed for rapid prototyping and educational use. It features flexible power options, modern connectivity, and user-friendly interfaces. An integrated LED matrix allows for simple visual feedback and display.
-
-<div align="center">
-  <img src="hardware/resources/unit_top_v_1_0_0_icp10111_barometric_pressure_sensor.png" width="450px" alt="Development Board">
-  <p><em>Development Board</em></p>
-</div>
-
-<div align="center">
-
-### Quick Setup
-
-[<img src="https://img.shields.io/badge/Product%20Wiki-blue?style=for-the-badge" alt="Product Wiki">](#)
-[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](#)
-[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now">](#)
-[<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started">](#)
-
-</div>
-
-<div align="center" >
-
-## Overview
-
-| Feature           | Description                                         |
-|-------------------|-----------------------------------------------------|
-| Microcontroller   | 8-bit MCU                                           |
-| Memory            | Flash, SRAM, EEPROM                                 |
-| Clock Speed       | 16 MHz                                              |
-| Power Supply      | USB-C (5V)                                          |
-| Interfaces        | UART, I2C, SPI, PWM, ADC, GPIO                      |
-| LED Matrix        | 5x5 RGB LED Matrix                                  |
-| Connectivity      | USB-C for programming and power                     |
-| Form Factor       | UNO-compatible                                      |
-| Development IDEs  | Arduino IDE, PlatformIO                             |
-| Onboard Features  | Integrated LED matrix, programmable LED, reset button|
-| Expansion Port    | I2C connector for sensors and modules               |
-
-</div>
+![UE0097 module top view](hardware/img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png)
 
 ## Applications
 
-- **Prototyping:** Quickly develop and test ideas.
-- **Education:** Suitable for learning microcontroller basics.
-- **Wearables:** Compact and versatile for wearable devices.
-- **Displays:** Use the LED matrix for simple visual output.
+| Application | Module path |
+|---|---|
+| Microphone capture | Analog microphone connector to ES8311 ADC and ASDOUT |
+| Speaker playback | Host DSDIN1 to ES8311 DAC and NS4150B amplifier |
+| 3.5 mm audio playback | Host DSDIN1 to ES8311 DAC and jack circuit |
+| Bidirectional voice | Simultaneous record and playback paths |
 
-## Resources
+These paths describe connections in the supplied schematic. Application-level
+performance has not been characterized.
 
-- [Schematic Diagram](#)
-- [Pinout Diagram](#)
-- [Getting Started Guide](#)
+## Product Reference
 
-## 📝 License
+The [Product Reference source](tools/product-reference/README.md) preserves the
+existing chapter structure and leaves unsupported specification values empty.
+The publication workflow builds the PDF and DOCX and lists them on the
+[hardware downloads page](docs/hardware/index.html).
 
-All hardware and documentation in this project are licensed under the **MIT License**.  
-See [`LICENSE.md`](LICENSE.md) for details.
+## Hardware sources
 
-<div align="center">
-  <sub>Template created by UNIT Electronics</sub>
-</div>
+- [UE0097 revision 2.0 schematic](hardware/resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf)
+- [ES8311 User Guide](hardware/resources/es8311_user_guide.pdf)
+- [Top and bottom board views](hardware/assets/README.md)
+- [Hardware overview](hardware/README.md)
 
+The board images are labelled V1.1.0, while the available schematic is
+revision 2.0. Verify the physical board revision before relying on connector
+orientation or assembly options.
+
+## License
+
+The repository's original material is covered by [LICENSE](LICENSE).
+Third-party documents, including the ES8311 User Guide, retain their own
+terms.

@@ -11,3 +11,7 @@ software/sphinx/docs
 software/sphinx/pdf
 software/venv
 software/firmware
+# Generated Product Reference files
+build/
+__pycache__/
+*.pyc

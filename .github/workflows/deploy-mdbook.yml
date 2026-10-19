@@ -1,14 +1,6 @@
-name: Deploy Documentation to GitHub Pages
+name: Legacy mdBook Documentation (manual)
 
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - 'software/**'
-      - 'hardware/**'
-      - 'README.md'
-      - 'LICENSE'
-      - '.github/workflows/deploy-mdbook.yml'
   workflow_dispatch:
     inputs:
       force_rebuild:

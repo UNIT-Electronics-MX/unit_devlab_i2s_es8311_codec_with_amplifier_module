@@ -50,16 +50,10 @@ which mode a particular host application must use.
 
 ### **2.5 Application-Dependent and Uncharacterized Parameters** {.section-page}
 
-| Parameter | Module value |
-|---|---|
-| Total operating current | |
-| Amplifier output power and distortion | |
-| Validated speaker impedance | |
-| Microphone bias voltage and supported microphone types | |
-| Input gain and full-scale input at J2/J3 | |
-| Module audio signal-to-noise ratio | |
-| End-to-end latency and noise | |
-| ESD, EMC, and environmental limits | |
+Module-level measurements for operating current, amplifier output power,
+speaker load, microphone compatibility, audio signal levels and quality, and
+environmental limits have not been supplied. The outstanding values are
+listed in Section 9.3.
 
 ### **2.6 Electrical Precautions** {.section-page}
 

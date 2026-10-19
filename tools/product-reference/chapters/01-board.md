@@ -2,14 +2,14 @@
 
 ### **1.1 Accessories** {.section-page}
 
-| Accessory | Purpose | Verified specification |
-|---|---|---|
-| I2S-capable host controller | Supplies digital audio and clocks | |
-| Power source | Supplies VCC and ground | |
-| Analog microphone | Connects to J2 | |
-| Mono speaker | Connects to J1 | |
-| 3.5 mm plug or headset | Connects to J3 | |
-| Four-position cable | Connects to J6 | |
+| Accessory | Purpose |
+|---|---|
+| I2S-capable host controller | Supplies digital audio and clocks |
+| Power source | Supplies VCC and ground |
+| Analog microphone | Connects to J2 |
+| Mono speaker | Connects to J1 |
+| 3.5 mm plug or headset | Connects to J3 |
+| Four-position cable | Connects to J6 |
 
 Connector mating part numbers, speaker impedance and power rating, microphone
 requirements, and cable orientation are not defined in the supplied board

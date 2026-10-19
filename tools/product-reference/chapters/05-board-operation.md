@@ -48,13 +48,8 @@ Measured pass/fail ranges for these checks are not published.
 
 ### **5.5 Firmware Example Collection** {.section-page}
 
-| Platform | Verified example |
-|---|---|
-| Arduino C++ | |
-| MicroPython | |
-| Other hosts | |
-
-No module-specific example has been validated in this repository.
+No module-specific Arduino C++, MicroPython, or other host example has been
+validated in this repository.
 
 ### **5.6 Audio Buffer Planning** {.section-page}
 

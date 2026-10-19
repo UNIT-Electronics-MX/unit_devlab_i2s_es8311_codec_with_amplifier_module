@@ -4,7 +4,12 @@ This chapter transcribes the revision 2.0 schematic. Pin numbering is
 electrical numbering in that schematic. Before wiring physical connectors,
 confirm pin-1 orientation on the actual board revision.
 
-### **4.1 J4 Host Header Pinout** {.section-page}
+### **4.1 General Pinout** {.section-page}
+
+A complete general board pinout has not been supplied. The available diagram
+and table identify only the J4 host header.
+
+**J4 host header pinout**
 
 J4 is the ten-position castellated host header.\
 ![Top view showing the J4 host header signals and microphone and speaker connectors](hardware/pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png){width=6.5in}
@@ -57,14 +62,14 @@ orientation on the actual board before wiring it.
 
 ### **4.2 Host Pinout Compatibility** {.section-page}
 
-| Host requirement | Module connection | Validated host mapping |
-|---|---|---|
-| I2C SCL / SDA | J4 pins 3 / 4 | |
-| I2S MCLK / SCLK / LRCK | J4 pins 5 / 6 / 8 | |
-| I2S ADC receive | J4 pin 7 | |
-| I2S DAC transmit | J4 pin 9 | |
-| Amplifier control | J4 pin 10 | |
-| Supply / return | J4 pins 1 / 2 | |
+| Host requirement | Module connection |
+|---|---|
+| I2C SCL / SDA | J4 pins 3 / 4 |
+| I2S MCLK / SCLK / LRCK | J4 pins 5 / 6 / 8 |
+| I2S ADC receive | J4 pin 7 |
+| I2S DAC transmit | J4 pin 9 |
+| Amplifier control | J4 pin 10 |
+| Supply / return | J4 pins 1 / 2 |
 
 The module does not implement an Arduino Nano pinout. Host GPIO numbers,
 voltage compatibility, and required firmware depend on the chosen controller.

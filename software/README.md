@@ -1,25 +1,14 @@
-# Getting Started
+# Software examples
 
-Welcome to the project! This guide will help you set up your development environment and start working with the board.
+Product-specific examples belong in `software/examples/`:
 
-## Prerequisites
+- `cpp_examples/` for Arduino C++ sketches.
+- `mp_examples/` for MicroPython scripts.
 
-- Ensure you have the required hardware and cables.
-- Install necessary software tools (see [Installation](#installation) below).
+Use lowercase names with underscores and lowercase extensions for new files
+(for example, `i2s_audio_playback.ino` or `i2s_audio_playback.py`). Keep each
+example self-contained and describe its required board connections and
+dependencies in a nearby README.
 
-## Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/your-org/your-project.git
-    ```
-2. Follow the setup instructions in the `docs/` directory.
-
-## Usage
-
-- Connect the board to your computer.
-- Build and flash the firmware as described in the [User Guide](docs/USER_GUIDE.md).
-
-## Support
-
-For questions or issues, please open an issue on GitHub.
+No ES8311 examples have been added yet. The directories are placeholders for
+verified, product-specific examples.

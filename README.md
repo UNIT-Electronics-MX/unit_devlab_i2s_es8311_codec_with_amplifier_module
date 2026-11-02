@@ -15,9 +15,9 @@ I2S/PCM audio signals, and I2C control.
 ### Quick Setup
 
 <img src="https://img.shields.io/badge/Product%20Wiki-pending-lightgrey?style=for-the-badge" alt="Product Wiki pending">
-[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Product Reference">](docs/hardware/unit_product_reference_v_0_1_0_i2s_es8311_codec_with_amplifier_module.pdf)
-[<img src="https://img.shields.io/badge/Buy%20Now-orange?style=for-the-badge" alt="Buy Now">](https://uelectronics.com/)
-[<img src="https://img.shields.io/badge/Getting%20Started-purple?style=for-the-badge" alt="Getting Started">](software/README.md)
+[<img src="https://img.shields.io/badge/Datasheet-green?style=for-the-badge" alt="Datasheet">](docs/hardware/unit_product_reference_v_0_1_0_i2s_es8311_codec_with_amplifier_module.pdf)
+<img src="https://img.shields.io/badge/Buy%20Now-pending-lightgrey?style=for-the-badge" alt="Buy Now pending">
+<img src="https://img.shields.io/badge/Getting%20Started-pending-lightgrey?style=for-the-badge" alt="Getting Started pending">
 
 </div>
 
@@ -71,7 +71,3 @@ orientation or assembly options.
 The repository's original material is covered by [LICENSE](LICENSE).
 Third-party documents, including the ES8311 User Guide, retain their own
 terms.
-
-<div align="center">
-  <sub>Template created by UNIT Electronics</sub>
-</div>

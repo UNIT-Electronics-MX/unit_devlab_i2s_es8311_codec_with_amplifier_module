@@ -2,10 +2,14 @@
 
 ## Hardware Scope
 
-This page summarizes the supplied UE0097 schematic revision 2.0. Board images
+This page summarizes the supplied schematic revision 2.0. Board images
 are tagged V1.1.0 and have not been reconciled with that schematic. Use the
 [Product Reference](../tools/product-reference/README.md) for the full chapter
 structure, source distinctions, and blank fields for undocumented values.
+
+| Field | Value |
+|---|---|
+| MPN | UE0097 |
 
 ## Power Tree
 
@@ -19,7 +23,6 @@ The supplied schematic identifies `U1` and `U2` as 3.3 V supplies for the digita
 
 - Product name: **DevLab I2S ES8311 Codec with Amplifier Module**.
 - Product family: **UNIT DevLab ecosystem**.
-- MPN: **UE0097**.
 - Existing source files retain their published names and revisions.
 - Generated Product Reference: `unit_product_reference_v_0_1_0_i2s_es8311_codec_with_amplifier_module.pdf`.
 

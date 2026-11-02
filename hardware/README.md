@@ -1,13 +1,29 @@
-# UE0097 ES8311 Audio Module Hardware
+# DevLab I2S ES8311 Codec with Amplifier Module Hardware
 
-## Scope
+## Hardware Scope
 
 This page summarizes the supplied UE0097 schematic revision 2.0. Board images
 are tagged V1.1.0 and have not been reconciled with that schematic. Use the
 [Product Reference](../tools/product-reference/README.md) for the full chapter
 structure, source distinctions, and blank fields for undocumented values.
 
-## Main circuit blocks
+## Power Tree
+
+The supplied schematic identifies `U1` and `U2` as 3.3 V supplies for the digital and analog codec sections. Validated VCC limits, rail current, and power-path behavior remain unspecified; a separate power-tree drawing is not available.
+
+## Block Diagram
+
+![UE0097 functional block diagram](img/unit_block_diagram_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png)
+
+## Naming Rules
+
+- Product name: **DevLab I2S ES8311 Codec with Amplifier Module**.
+- Product family: **UNIT DevLab ecosystem**.
+- MPN: **UE0097**.
+- Existing source files retain their published names and revisions.
+- Generated Product Reference: `unit_product_reference_v_0_1_0_i2s_es8311_codec_with_amplifier_module.pdf`.
+
+## Hardware
 
 | Reference | Part | Function |
 |---|---|---|
@@ -20,7 +36,17 @@ structure, source distinctions, and blank fields for undocumented values.
 | J4 | 10-position castellated header | Power, control, and digital audio |
 | J6 | Four-position connector | Power, ground, SDA, and SCL |
 
-## Host header J4
+### Board Views
+
+![UE0097 top view](img/unit_top_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png)
+
+![UE0097 bottom view](img/unit_bottom_v_1_1_0_i2s_es8311_codec_with_amplifier_module.png)
+
+[Schematic revision 2.0](resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf)
+
+## Pinout
+
+![J4 host header pinout](pinout/unit_j4_header_pinout_v_0_1_0_i2s_es8311_codec_with_amplifier_module.png)
 
 | Pin | Signal | Function |
 |---:|---|---|
@@ -40,7 +66,39 @@ the 7-bit I2C address 0x19 in the ES8311 User Guide. The J6 connector labelled
 QWIIC carries VCC, not the regulated 3V3 net. Confirm the attached device's
 power and logic requirements before connecting it.
 
-## Available files
+## Dimensions
+
+Validated board dimensions are not supplied in the available product-specific documents.
+
+## Topology
+
+The ES8311 codec connects to the host through J4 and drives the NS4150B speaker amplifier. The supplied schematic also shows a microphone input and a 3.5 mm audio jack. See the [Block Diagram](#block-diagram) for the functional paths.
+
+## Pin & Connector Layout
+
+- **J1:** two-position differential speaker output.
+- **J2:** two-position analog microphone connection.
+- **J3:** 3.5 mm audio jack.
+- **J4:** 10-position host castellated header; see the [Pinout](#pinout) table.
+- **J6:** four-position connector for power, ground, SDA, and SCL. Its VCC contact is not the regulated 3V3 net.
+
+## Functional Description
+
+The ES8311 provides I2S/PCM audio conversion for the microphone and playback paths. The NS4150B drives the differential speaker output. The supplied schematic shows the ES8311 CE pin pulled high, corresponding to 7-bit I2C address `0x19` in the ES8311 User Guide. Validate the connected host and peripherals against the J4 and J6 power and logic levels before use.
+
+## Applications
+
+| Application | Module path |
+|---|---|
+| Microphone capture | Analog microphone connector to ES8311 ADC and ASDOUT |
+| Speaker playback | Host DSDIN1 to ES8311 DAC and NS4150B amplifier |
+| 3.5 mm audio playback | Host DSDIN1 to ES8311 DAC and jack circuit |
+| Bidirectional voice | Simultaneous record and playback paths |
+
+These paths describe connections in the supplied schematic. Application-level
+performance has not been characterized.
+
+## References
 
 - [Revision 2.0 schematic](resources/unit_sch_v_2_0_0_i2s_es8311_codec_with_amplifier_module.pdf)
 - [ES8311 User Guide](resources/es8311_user_guide.pdf)
@@ -51,3 +109,5 @@ power and logic requirements before connecting it.
 
 Validated VCC limits, speaker load, output power, current consumption, and
 mechanical dimensions are not supplied in the available board documents.
+
+- [Product Reference](../docs/hardware/unit_product_reference_v_0_1_0_i2s_es8311_codec_with_amplifier_module.pdf)
